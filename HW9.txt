@@ -1,0 +1,8 @@
+1. Every write operation must write to the parity disk. This could cause data to to not be processed fast enough.
+Read operations do not use the parity disk, which could reduce read throughput. If 2 disks fail, then data is lost.
+
+2. If 1 disk fails, then data is lost.
+
+3. 
+
+4. 12, 40, 41, 60, 4, 20, 22, 29, 31, 51, 5

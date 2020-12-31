@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2014996D-F6C6-6B56-2B81-A4371294F2F7" containerWithKeyObject="1026B190-6155-12C7-339A-FAD3520AAACC" localFKIndex="DE632FAB-6258-D760-78A9-B80298DA8A73" name="SYS_C00169195">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEK223</sourceObjSchema>
+<sourceObjName>SYS_C00169195</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:29 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<referredTableLongName>DEK223.ACCOUNT</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F4F18517-009A-35D1-22F0-88CBF6748152</referredTableID>
+<keyObject>07B28FC2-331A-F140-E30D-ECF2B466009F</keyObject>
+<referredKeyID>07B28FC2-331A-F140-E30D-ECF2B466009F</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>ACC_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

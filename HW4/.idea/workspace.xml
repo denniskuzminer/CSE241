@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="79eb64cb-be5b-464b-9794-6d57fdb3334e" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1Xwzi1PbS6EDJq8F9WFBKgP1zdq" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BankProject" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="AdvList" />
+      <module name="HW4" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="79eb64cb-be5b-464b-9794-6d57fdb3334e" name="Default Changelist" comment="" />
+      <created>1581972067684</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581972067684</updated>
+      <workItem from="1581972072577" duration="13075000" />
+      <workItem from="1582050881232" duration="1878000" />
+      <workItem from="1582148127951" duration="21406000" />
+      <workItem from="1582591466216" duration="53000" />
+      <workItem from="1582658976915" duration="1053000" />
+      <workItem from="1583331963506" duration="230000" />
+      <workItem from="1586286013503" duration="3888000" />
+      <workItem from="1586354612266" duration="1209000" />
+      <workItem from="1586357058710" duration="3425000" />
+      <workItem from="1586368453450" duration="4000" />
+      <workItem from="1586381115624" duration="415000" />
+      <workItem from="1586386420133" duration="301000" />
+      <workItem from="1586386748907" duration="805000" />
+      <workItem from="1586467793846" duration="2932000" />
+      <workItem from="1586525993011" duration="664000" />
+      <workItem from="1586549823278" duration="605000" />
+      <workItem from="1586552824929" duration="862000" />
+      <workItem from="1586556820511" duration="2150000" />
+      <workItem from="1586700944160" duration="599000" />
+      <workItem from="1586719611795" duration="596000" />
+      <workItem from="1586723801800" duration="925000" />
+      <workItem from="1586773929900" duration="603000" />
+      <workItem from="1586923391510" duration="1822000" />
+      <workItem from="1586952109953" duration="71000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

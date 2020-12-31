@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="ACCOUNT" directorySegmentName="seg_0" id="F4F18517-009A-35D1-22F0-88CBF6748152">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:25 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<schemaObject>C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>964EC33C-A6EF-D0B9-C85F-EC72459150B3</segment>
+<tableSpace>F12AC4DD-737E-FE8E-3586-2FD220BF7C32</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="TYPE" id="1F193C42-F4D8-DAA0-F993-4CA1A2AA85EA">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ACC_ID" id="205692C6-4339-8A5B-3888-B662C69377C2">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PENALTY_FEE" id="2944B636-1D43-2346-3971-64645AFA7412">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RATE" id="4F0CCA30-D659-BAFA-2283-EF1F761C8ED9">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BALANCE" id="5DBBDA99-90A1-4CAF-6918-24CEE8D92B08">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MIN_BALANCE" id="BC046659-1A37-D8EC-A0EC-231F807E9D7C">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="ACCOUNT_PK" id="07B28FC2-331A-F140-E30D-ECF2B466009F">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:27 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<schemaObject>C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D</schemaObject>
+<segment>68175B9D-3E0B-663A-6D7E-FB016FD4A09E</segment>
+<tableSpace>F12AC4DD-737E-FE8E-3586-2FD220BF7C32</tableSpace>
+<indexSegment>68175B9D-3E0B-663A-6D7E-FB016FD4A09E</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="SYS_C00154751" id="6607FB5A-7D7C-E201-1EFD-1F9B00436AC6">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:27 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</TableCheckConstraint>
+</tableCheckConstraints>
+</TableProxyOraclev12c>

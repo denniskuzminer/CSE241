@@ -1,0 +1,17 @@
+1. 
+	a. One person owns only one social security number, and that one SSN can only have one owner.
+	b. One pet can only have one owner, but one owner can have many pets.
+	c. A group of (many) students can have more than one classes, and a group of (many) classes have more than one students in them.
+2.
+	a. A transaction is a weak entity to an account. 
+	b. You would merge information that already corresponds with one another and therefore will create many unecessary duplicates.
+	c.
+3. Assuming you have a ternary relationship with a professor, textbook, and course. These are all connected, as they all use each other. A professor uses a course and a textbook to teach,
+a course uses a professor and a textbook to exist, and a textbook uses a course and a professor to be part of the course. 
+Design 2 cannot handle a situation when multiple textbooks are ordered for the same course by different professors. You will not be able to uniquely identify what textbook is ordered by which
+specific professor for that course. Connecting A and C in the binary relationships would solve this probkem because a professor can have a direct connection to the textbook they ordered, 
+and the textbook can have an attribute that shows what teacher ordered the textbook.
+4. 
+5. An example of the generalization of entities is a faculty member and a student being part of the person generalization.
+A faculty member is a person and so is a student. This is an overlapping generalization because a supertype (person) can be a member of multiple subtypes (both
+a student and a faculty member). For example, a student can be a grader or a TA. 

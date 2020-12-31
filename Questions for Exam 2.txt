@@ -1,0 +1,6 @@
+
+
+
+
+4b. Can we assume that we do not have to factor in the number of names in instructor? Can we just consider the min/max rows using gender and dept_name? Can we assume that all 5 departments are present in the data?
+4c. Is it asking to take each department and rank the genders in that department, making each rank either 1 or 2? Or do we need to rank each department and gander making the results 1,2,3,4...? 

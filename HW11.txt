@@ -1,0 +1,49 @@
+1. This schedule is serializable
+T1 <---------- T2
+  \                 /
+    \             /
+      \         /
+        v    v
+          T3     
+T2 -> T1 -> T3
+
+   T1             T2           T3
+-----------------------------------
+	read(A)
+	read(B)
+read(A)
+write(A)
+		read(B)
+		write(B)
+		read(A)
+		write(A)
+
+2. Having transactions commit in the order of T3, T2, T1 would result in a non-recoverable schedule.
+This is because T1 should commit before T3, as T3 reads data that T1 writes. Therefore, this schedule
+could not be recoverable if T3 commits first.
+
+3. Because there is a checkpoint after T0, the recovery algorithm does not need to redo or undo the changes
+that happened that point; however, there is no checkpoint after T1 commit. This means that it does not need to 
+undo T1 because a commit has been written, but it does need to redo T1.
+
+4. 
+a. The lock-X of A and B was not held until the abort/commit statement; therefore, rollbacks do not only need to
+be made to T1 but changes also need to be rolled back from T2 and T3.
+b. Exclusive locks could be held until the abort statement and that would prevent against casacading rollbacks.
+
+5. In Strict 2 Phase Locking, any data written by an uncommitted transaction are locked in exclusive mode until the
+transaction commits, preventing any other transaction from reading the data. This means that other transactions cannot 
+and will not use any data that it currently locked; therefore, there is no need to cascade aborts, as there will be nothing to rollback.
+
+If a transaction holds a lock long enough until it commits that means that if you release those locks,
+another transaction is safe to read the data that has been updated by the initial transaction (because of the commit).
+However, if it aborts then a different transaction is safe to read that data because nothing happens when the locks are released.
+Therefore, Strict 2 Phase Locking is cascadeless.
+
+6. Let's say that transaction T1 wishes to update a data item; however, T0 already has a lock on it. Let's also say that 
+T0 wishes to update a data item that T1 has a lock on. Under snapshot isolation, the system needs to decide how to prevent
+this order of transactions from creating adeadlock situation using the first updater wins approach. T0 must commit or abort,
+as T1 waits for it. If T0 commits, T1 must abort. However, if T0 aborts, then T1 can obtain a lock after T0 releases. If a concurrent transaction
+updated the data item in question, then T1 aborts, else, it proceeds with its normal execution. 
+This ensures that the first to obtain a lock will be able to update first (hence first updater wins). Any attempt at updating 
+after will be aborted.

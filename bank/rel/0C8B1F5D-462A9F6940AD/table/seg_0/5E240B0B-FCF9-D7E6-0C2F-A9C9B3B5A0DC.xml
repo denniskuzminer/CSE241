@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5E240B0B-FCF9-D7E6-0C2F-A9C9B3B5A0DC" schemaObject="C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D" name="DEBIT_CARD">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEK223</sourceObjSchema>
+<sourceObjName>DEBIT_CARD</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:25 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DEBIT_CARD_NUMBER" id="BDF9A06D-9462-8E19-709E-66672A81F668">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEBIT_CARD</sourceObjSchema>
+<sourceObjName>DEBIT_CARD_NUMBER</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>16 BYTE</dataTypeSize>
+<ownDataTypeParameters>16 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACC_ID" id="E76173D4-0C77-C5D6-A963-CD21C1873A17">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEBIT_CARD</sourceObjSchema>
+<sourceObjName>ACC_ID</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<ownDataTypeParameters>5 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F32071D2-FC7E-C8BD-E839-487CD320FC07" referredColumn="205692C6-4339-8A5B-3888-B662C69377C2"/>
+</associations>
+</Column>
+<Column name="EXPIRATION_DATE" id="3F70A65C-06B3-66EA-4831-2EEC24A2EC82">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEBIT_CARD</sourceObjSchema>
+<sourceObjName>EXPIRATION_DATE</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<ownDataTypeParameters>5 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4552E686-52D1-1133-8C31-DD52F34326FB" schemaObject="C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D" name="DEBIT_CARD_PK">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEK223</sourceObjSchema>
+<sourceObjName>SYS_C00154793</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BDF9A06D-9462-8E19-709E-66672A81F668"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="303A244B-75EF-0DEF-BB27-1DEA01157336" name="SYS_C00154794">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:29 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E76173D4-0C77-C5D6-A963-CD21C1873A17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,40 @@
+exec advlist('Finance');
+
+create or replace procedure advlist(dept IN instructor.dept_name%TYPE)
+is
+cnt number(6,2):= 0;
+cursor alist is
+    select to_char(instructor.id, '00009') as instructorID, 
+        instructor.name as instructorName, 
+        to_char(student.id, '00009') as adviseeID, 
+        student.name as adviseeName
+    from department left outer join instructor on department.dept_name = instructor.dept_name
+    left outer join advisor
+    on advisor.i_id = instructor.ID 
+    left outer join student 
+    on advisor.s_id = student.ID 
+    where department.dept_name = dept 
+    order by instructorID, adviseeID;
+begin 
+    for a in alist
+    loop
+        cnt := cnt+1;
+    end loop;   
+    if cnt = 0 then
+        dbms_output.put_line ('Department ' || dept || ' does not exist.');
+    else
+        if cnt = 1 then 
+            dbms_output.put_line ('No instructors in department ' || dept || ''); 
+        else 
+            dbms_output.put_line('INSTRUCTORID' || CHR(9) || 'INSTRUCTORNAME' || CHR(9) || 'ADVISEEID' || CHR(9) || 'ADVISEENAME');
+            for a in alist
+            loop
+                cnt := cnt+1;
+                dbms_output.put_line(a.instructorID || CHR(9) ||CHR(9) || CHR(9) || a.instructorName || CHR(9) ||CHR(9) || CHR(9) || a.adviseeID || CHR(9) || CHR(9) || CHR(9) || a.adviseeName);
+            end loop;
+        end if;    
+    end if;    
+exception
+    when NO_DATA_FOUND then dbms_output.put_line ('No instructors in department ' || dept || ' .');    
+    when others then raise_application_error (-20000,'I do not know what to do here. Big oof.');
+end;

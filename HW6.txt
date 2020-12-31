@@ -1,0 +1,20 @@
+1. select year, month, day, shares_traded, rank() over (order by shares_traded desc) mostshares
+from nyse
+order by shares_traded desc;
+
+2. select YEAR, MONTH, DAY, sum(SHARES_traded) SHARES, sum(num_TRADES) TRADES, sum(dollar_volume) as VOLUME
+from nyse
+group by rollup(YEAR, MONTH, DAY)
+order by year, month, day;
+
+3. 2477
+
+4. select YEAR, MONTH, round(sum(total_VOLUME) over (order by YEAR, MONTH rows between 2 preceding and current row),2) as total_quarterly_VOLUME, round(avg(total_VOLUME) over (order by YEAR, MONTH rows between 2 preceding and current row),2) as quarterly_avg
+from (select YEAR, MONTH, sum(dollar_volume) as total_VOLUME
+from nyse
+group by year, month
+order by year, month)
+group by YEAR, MONTH, total_VOLUME;
+
+
+5. group by rollup(a), rollup(b), rollup(c), rollup(d)

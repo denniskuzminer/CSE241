@@ -1,0 +1,291 @@
+--VERSION 1
+
+create table branch (
+	address varchar(100),
+	teller-type varchar(4),
+	primary key (address) 
+	check (teller-type in ('ATM', 'Both') ) );
+
+create table account (
+	acc_id char(5),
+	min_balance numeric(8,2),
+	type varchar(8),
+	rate numeric(5, 3),
+	balance numeric(8,2),
+	penalty_fee numeric(8, 2), 
+	primary key (acc_id),
+	check (type in ('Checking', 'Savings') ) 
+	check ( ( penalty_fee > 0 and type = 'Savings' ) or ( penalty_fee = 0 and type = 'Checking' and min_balance = 0 ) ),
+	check ( balance > 0 ) );
+
+create table loan (
+	loan_id char(5),
+	amount numeric(8, 2),
+	type varchar(9),
+	monthly_payment numeric(8, 2),
+	rate numeric(3, 5),
+	primary key (loan_id),
+	check (type in ('Mortgage', 'Unsecured') ) );
+/*
+create table card ( 
+	card_number char(16),
+	type varchar(6),
+	expiration_date char(5) not null,
+	rate numeric(3, 5),
+	limit numeric(8, 2),
+	running_balance numeric(8, 2),
+	balance_due numeric(8, 2),
+	primary key (card_number), 
+	check (type in ( 'Credit', 'Debit') ), 
+	check (type = 'Debit' and (rate is null and limit is null and running_balance is null and balance_due is null) ),
+	check (type = 'Credit' and (rate is not null and limit is not null and running_balance is not null and balance_due is not null) ) );
+*/
+
+create table debit_card ( 
+	card_number char(16),
+	acc_id char(5),
+	expiration_date char(5) not null,
+	primary key (card_number), 
+	foreign key (acc_id) references account(acc_id) );
+
+create table credit_card ( 
+	card_number char(16),
+	acc_id char(5),
+	expiration_date char(5) not null,
+	rate numeric(3, 5) not null,
+	limit numeric(8, 2) not null,
+	running_balance numeric(8, 2) not null,
+	balance_due numeric(8, 2) not null,
+	primary key (card_number), 
+	foreign key (acc_id) references account(acc_id) );
+
+create table transaction ( 
+	trans_id char(5),
+	acc_id char(5),
+	amount numeric(8, 2),
+	time timestamp,
+	--SET time_zone='+00:00';
+	type varchar(20),
+	primary key (trans_id),
+	foreign key (acc_id) references account(acc_id),
+	--There needs to be a contraint that makes Deposits only valid if the location of this transaction is at a bank that is BOTH
+	check (type in (
+	'Withdrawls', 'Deposits', 'Fund Transfers', 'Purchases', 'Loan Payments', 'Card Payments' 
+	) ) );
+
+create table customer (
+	cust_id char(5),
+	name varchar(20) not null,
+	address varchar(20),
+	phone varchar(12),
+	primary key (cust_id) );
+
+--Connector tables
+
+--Loan/Customer table
+create table borrow (
+	cust_id char(5),
+	loan_id char(5),
+	primary key (loan_id),
+	foreign key (cust_id) references customer(cust_id),
+	foreign key (loan_id) references loan(loan_id) );
+
+--Customer/Account table
+create table customer_acc (
+	cust_id char(5),
+	acc_id char(5),
+	primary key (cust_id, acc_id),
+	foreign key (cust_id) references customer(cust_id),
+	foreign key (acc_id) references account(acc_id) );
+
+create table account_loan (
+	acc_id char(5),
+	loan_id char(5),
+	primary key (loan_id),
+	foreign key (acc_id) references account(acc_id),
+	foreign key (loan_id) references loan(loan_id) );
+
+create table account_branch (
+	acc_id char(5),
+	address varchar(100),
+	primary key (acc_id),
+	foreign key (acc_id) references account(acc_id),
+	foreign key (address) references branch(address) );
+
+create table loan_branch (
+	loan_id char(5),
+	address varchar(100),
+	primary key (loan_id),
+	foreign key (loan_id) references loan(loan_id),
+	foreign key (address) references branch(address) );
+
+
+
+drop table account_branch;
+drop table account_loan;
+drop table customer_card;
+drop table loan_branch;
+drop table borrow;
+drop table customer;
+drop table card;
+drop table transaction;
+drop table account;
+drop table loan;
+drop table branch;
+drop table debit_card;
+
+--VERSION 2
+
+create table branch (
+	branch_id char(5),
+	address varchar(100),
+	teller_type varchar(4),
+	primary key (branch_id),
+	check (teller_type in ('ATM', 'Both', 'None') ) );
+
+create table account (
+	acc_id char(5),
+	min_balance numeric(8,2),
+	type varchar(8),
+	rate numeric(3, 5),
+	balance numeric(8,2),
+	penalty_fee numeric(8, 2), 
+	primary key (acc_id),
+	check (type in ('Checking', 'Savings') ), 
+	check ( ( type = 'Savings' ) or ( penalty_fee = 0 and type = 'Checking' and min_balance = 0 ) ),
+	check ( balance > 0 ) );
+
+create table loan (
+	loan_id char(5),
+	amount numeric(8, 2),
+	type varchar(9),
+	monthly_payment numeric(8, 2),
+	rate numeric(5, 3),
+	primary key (loan_id),
+	check (type in ('Mortgage', 'Unsecured') ) );
+
+create table debit_card ( 
+	debit_card_number char(16),
+	acc_id char(5),
+	expiration_date char(5) not null,
+	primary key (debit_card_number), 
+	foreign key (acc_id) references account(acc_id) );
+
+create table credit_card ( 
+	credit_card_number char(16),
+	expiration_date char(5) not null,
+	rate numeric(5, 3) not null,
+	limit numeric(8, 2) not null,
+	running_balance numeric(8, 2) not null,
+	balance_due numeric(8, 2) not null,
+	primary key (credit_card_number) );
+
+create table transactionaccount ( 
+	trans_id char(6),
+	acc_id char(5),
+	--This is the location where the trasaction occurred
+	branch_id char(5),
+	type varchar(20),
+	time timestamp,
+	--SET time_zone='+00:00';
+	amount numeric(8, 2),
+	primary key (trans_id),
+	foreign key (acc_id) references account(acc_id),
+	foreign key (branch_id) references branch(branch_id),
+	--There needs to be a contraint that makes Deposits only valid if the location of this transaction is at a bank that is BOTH
+	check (type in (
+	'Withdrawls', 'Deposits', 'Fund Transfers', 'Purchases', 'Loan Payments', 'Card Payments' 
+	) ) );
+
+create table transactioncreditcard ( 
+	trans_id char(6),
+	credit_card_number char(16),
+	--This is the location where the trasaction occurred
+	branch_id char(5),
+	type varchar(20),
+	time timestamp,
+	--SET time_zone='+00:00';
+	amount numeric(8, 2),
+	primary key (trans_id),
+	foreign key (credit_card_number) references credit_card(credit_card_number),
+	foreign key (branch_id) references branch(branch_id),
+	--There needs to be a contraint that makes Deposits only valid if the location of this transaction is at a bank that is BOTH
+	check (type in (
+	'Withdrawls', 'Deposits', 'Fund Transfers', 'Purchases', 'Loan Payments', 'Card Payments' 
+	) ) );
+
+create table transactionloan ( 
+	trans_id char(6),
+	loan_id char(5),
+	--This is the location where the trasaction occurred
+	branch_id char(5),
+	type varchar(20),
+	time timestamp,
+	--SET time_zone='+00:00';
+	amount numeric(8, 2),
+	primary key (trans_id),
+	foreign key (loan_id) references loan(loan_id),
+	foreign key (branch_id) references branch(branch_id),
+	--There needs to be a contraint that makes Deposits only valid if the location of this transaction is at a bank that is BOTH
+	check (type in (
+	'Withdrawls', 'Deposits', 'Fund Transfers', 'Purchases', 'Loan Payments', 'Card Payments' 
+	) ) );
+
+
+create table customer (
+	cust_id char(5),
+	name varchar(20) not null,
+	address varchar(100),
+	phone varchar(12),
+	primary key (cust_id) );
+
+--Connector tables
+
+--Loan/Customer table
+create table customer_loan(
+	cust_id char(5),
+	loan_id char(5),
+	primary key (loan_id),
+	foreign key (cust_id) references customer(cust_id),
+	foreign key (loan_id) references loan(loan_id) );
+
+--Customer/Account table
+create table customer_account (
+	cust_id char(5),
+	acc_id char(5),
+	primary key (cust_id, acc_id),
+	foreign key (cust_id) references customer(cust_id),
+	foreign key (acc_id) references account(acc_id) );
+
+create table Customer_creditcard (
+	credit_card_number char(16),
+	cust_id char(5),
+	primary key (credit_card_number, cust_id),
+	foreign key (credit_card_number) references credit_card(credit_card_number),
+	foreign key (cust_id) references customer(cust_id) );
+
+
+drop table account_branch;
+drop table account_loan;
+drop table borrow;
+drop table customer_acc;
+drop table customer;
+drop table transaction;
+drop table loan;
+drop table branch;
+drop table debit_card;
+drop table credit_card;
+drop table account;
+
+grant select on customer to grader;
+grant select on account to grader;
+grant select on credit_card to grader;
+grant select on loan to grader;
+grant select on branch to grader;
+grant select on debit_card to grader;
+grant select on customer_account to grader;
+grant select on customer_creditcard to grader;
+grant select on customer_loan to grader;
+grant select on transactionaccount to grader;
+grant select on transactioncreditcard to grader;
+grant select on transactionloan to grader;

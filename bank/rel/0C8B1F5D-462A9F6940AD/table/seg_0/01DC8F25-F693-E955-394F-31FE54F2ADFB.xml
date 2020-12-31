@@ -1,0 +1,155 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="01DC8F25-F693-E955-394F-31FE54F2ADFB" schemaObject="C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D" name="TRANSACTIONCREDITCARD">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEK223</sourceObjSchema>
+<sourceObjName>TRANSACTIONCREDITCARD</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TRANS_ID" id="BF8FAF9B-92FE-ADA9-58C1-F44894FAC75F">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>TRANSACTIONCREDITCARD</sourceObjSchema>
+<sourceObjName>TRANS_ID</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>6 BYTE</dataTypeSize>
+<ownDataTypeParameters>6 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREDIT_CARD_NUMBER" id="D3EA2FEB-FB18-A924-F0F8-7C4482E2C3BF">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>TRANSACTIONCREDITCARD</sourceObjSchema>
+<sourceObjName>CREDIT_CARD_NUMBER</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>16 BYTE</dataTypeSize>
+<ownDataTypeParameters>16 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FCE5C41C-4DAD-11E7-2F68-7E5FC0CC4603" referredColumn="51C2B7A5-9765-B693-2A20-1C1A0B604519"/>
+</associations>
+</Column>
+<Column name="BRANCH_ID" id="43C47AA6-DE01-24A0-B7AD-A569E8F771C8">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>TRANSACTIONCREDITCARD</sourceObjSchema>
+<sourceObjName>BRANCH_ID</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<ownDataTypeParameters>5 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="98C8ED69-25E0-93C5-8EC9-2A8F937E4A95" referredColumn="CC554B17-6DD3-D61B-4E6E-91E48AC4BD38"/>
+</associations>
+</Column>
+<Column name="TYPE" id="BE16B34F-327F-E3D8-D129-0C2076D2F512">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>TRANSACTIONCREDITCARD</sourceObjSchema>
+<sourceObjName>TYPE</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<constraintName>SYS_C00169180</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;Card Payment&apos;" description=""/>
+<valueDef value="&apos;Deposit&apos;" description=""/>
+<valueDef value="&apos;Fund Transfer&apos;" description=""/>
+<valueDef value="&apos;Loan Payment&apos;" description=""/>
+<valueDef value="&apos;Purchase&apos;" description=""/>
+<valueDef value="&apos;Withdrawal&apos;" description=""/>
+</listOfValues>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIME" id="34D2F7D0-9EA5-8F3B-831A-D4C8B5F41515">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>TRANSACTIONCREDITCARD</sourceObjSchema>
+<sourceObjName>TIME</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AMOUNT" id="D3417AB1-FA93-4ED9-0309-DB93E1488805">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>TRANSACTIONCREDITCARD</sourceObjSchema>
+<sourceObjName>AMOUNT</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="72748F6A-32C3-6565-C60D-397BED9F199F" schemaObject="C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D" name="TRANSACTIONCREDITCARD_PK">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEK223</sourceObjSchema>
+<sourceObjName>SYS_C00169181</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BF8FAF9B-92FE-ADA9-58C1-F44894FAC75F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="21F8C098-297E-AFCD-63C6-5AB930BC49EF" name="SYS_C00169182">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:29 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D3EA2FEB-FB18-A924-F0F8-7C4482E2C3BF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D1DC35AE-59A8-A222-5981-95A758A21A7C" name="SYS_C00169183">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:29 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="43C47AA6-DE01-24A0-B7AD-A569E8F771C8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

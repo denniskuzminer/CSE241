@@ -1,0 +1,16 @@
+1. First, if T1 needs to read ra1, T1 needs to lock the database, area A1, and Fa in IS mode, and finally to
+lock ra2 in S mode.
+Then, to update a record in the file Fa, T2 needs to lock the database, area A1, and file Fa
+in IX mode, and finally to lock the record it wants to update in X mode.
+
+2. C1 has a <prepare T> forced to the log. Then, C2 and C3 has a <ready T> on the log.
+C1 now has <commit T> on the log. C2 gets a <commit T> on the log. If C3 fails, C1 has already received 
+the <ready T> from C3; therefore, the coordinator executes the rest of the commit protocol in the
+normal fashion, ignoring the failure of the site.
+
+3. There could have been a network error causing C1 to rollback (or a coordinator has failed). Because C2 
+contains a <commit T> in its log, C2 must not have received the rollback due this error while C3 did. 
+However, in a normal senario, if C1 received only 1 <ready T>, then C1 would preferably <abort T>.
+
+4. The log contains a <commit T> record. In this case, the site executes redo(T). <commit T> will then also be added to
+the log for C2 and C3.

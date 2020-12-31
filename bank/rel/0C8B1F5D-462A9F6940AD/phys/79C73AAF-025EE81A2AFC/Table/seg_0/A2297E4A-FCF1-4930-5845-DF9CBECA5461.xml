@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="CUSTOMER_CREDITCARD" directorySegmentName="seg_0" id="A2297E4A-FCF1-4930-5845-DF9CBECA5461">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:25 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<schemaObject>C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>964EC33C-A6EF-D0B9-C85F-EC72459150B3</segment>
+<tableSpace>F12AC4DD-737E-FE8E-3586-2FD220BF7C32</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CUST_ID" id="E2351357-EC25-0AF4-C0B9-3C6412C0AF85">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREDIT_CARD_NUMBER" id="F0DB8B3E-4760-86D0-DDB1-606D050DB7AC">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="SYS_C00169174" id="23DF6071-2975-0A32-B49D-A04BA5985716">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:29 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="SYS_C00169175" id="E52E5937-AB44-6481-F03F-45335FA63714">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:29 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CUSTOMER_CREDITCARD_PK" id="D003090B-4228-0101-D19E-EA961EB4B3C7">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:28 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<schemaObject>C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D</schemaObject>
+<segment>68175B9D-3E0B-663A-6D7E-FB016FD4A09E</segment>
+<tableSpace>F12AC4DD-737E-FE8E-3586-2FD220BF7C32</tableSpace>
+<indexSegment>68175B9D-3E0B-663A-6D7E-FB016FD4A09E</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

@@ -1,0 +1,49 @@
+1. 
+a. 6 runs 
+1 -> 10 11 
+2 -> 1 5 
+3 -> 1 90
+4 -> 1 5 10 11 
+5 -> 1 1 5 10 11 90
+6 -> 2 101 
+b.
+- Create the runs (sorted)
+Merge pass 1
+- Merge 10 11 and 1 5
+Merge pass 2
+-  Merge 1 5 10 11 with 1 90
+- Write 1 1 5 10 11 90 to the disk
+Merge pass 3
+- Write 2 101 to the disk 
+- Merge it with 1 1 5 10 11 90
+Final Output 
+1 1 2 5 10 11 90 101
+c. 4
+2. Because the indecies are ordered sequentially, rather than using a search algorithm to find the next index,
+we can assume a similar index could be checked faster in the following position. 
+3. There would no longer be the benefit of the sequential search. This would take more time.
+4. The tuples of relation r and s will be partitioned into n+1 buckets.
+Let's say that a tuple in r gets mapped to r0 and a tuple in s gets mapped to s0 where r0 and s0 are buckets 
+If we use the same hash function, we only need to compare tuples in r0 with s0 and not s1, s2, s3...
+
+
+
+
+create table instructor1 (
+    ID char(5),
+    name varchar(20),
+    dept_name varchar(20),
+    gender varchar(6),
+    salary numeric(8,2),
+    primary key (ID) );
+    
+    
+
+insert into instructor1 values('11111', 'MR Yeet', 'Computer Science', 'Male', 80000);
+insert into instructor1 values('11112', 'MR Yup', 'Computer Science', 'Male', 70000);
+insert into instructor1 values('11113', 'Ms Yurp', 'Computer Science', 'Female', 75000);
+insert into instructor1 values('11114', 'MR Yurp', 'Physics', 'Male', 60000);
+insert into instructor1 values('11115', 'Ms Yup', 'Physics', 'Female', 75000);
+insert into instructor1 values('11116', 'Ms Yeet', 'Physics', 'Female', 70000);
+
+select * from instructor1;

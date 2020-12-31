@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A2297E4A-FCF1-4930-5845-DF9CBECA5461" schemaObject="C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D" name="CUSTOMER_CREDITCARD">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEK223</sourceObjSchema>
+<sourceObjName>CUSTOMER_CREDITCARD</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:25 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CREDIT_CARD_NUMBER" id="F0DB8B3E-4760-86D0-DDB1-606D050DB7AC">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>CUSTOMER_CREDITCARD</sourceObjSchema>
+<sourceObjName>CREDIT_CARD_NUMBER</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>16 BYTE</dataTypeSize>
+<ownDataTypeParameters>16 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="062CBD27-264D-541A-1704-DEEA720DB199" referredColumn="51C2B7A5-9765-B693-2A20-1C1A0B604519"/>
+</associations>
+</Column>
+<Column name="CUST_ID" id="E2351357-EC25-0AF4-C0B9-3C6412C0AF85">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>CUSTOMER_CREDITCARD</sourceObjSchema>
+<sourceObjName>CUST_ID</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<ownDataTypeParameters>5 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6708349A-82CA-0332-3778-1558E96C0C87" referredColumn="828CCB48-47A6-892E-8F05-8B4DEC2F787C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D003090B-4228-0101-D19E-EA961EB4B3C7" schemaObject="C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D" name="CUSTOMER_CREDITCARD_PK">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEK223</sourceObjSchema>
+<sourceObjName>SYS_C00169173</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0DB8B3E-4760-86D0-DDB1-606D050DB7AC"/>
+<colUsage columnID="E2351357-EC25-0AF4-C0B9-3C6412C0AF85"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="23DF6071-2975-0A32-B49D-A04BA5985716" name="SYS_C00169174">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:29 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0DB8B3E-4760-86D0-DDB1-606D050DB7AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E52E5937-AB44-6481-F03F-45335FA63714" name="SYS_C00169175">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:29 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E2351357-EC25-0AF4-C0B9-3C6412C0AF85"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

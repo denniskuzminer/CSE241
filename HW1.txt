@@ -1,0 +1,46 @@
+1.
+select ID
+from instructor
+where salary is null;
+
+2. 
+select distinct DEPT_NAME
+from student join takes
+on student.id = takes.id
+where takes.grade = 'A';
+
+3.
+create table yearly_total_enrollment (
+    dept_name varchar(20),
+    total_enrollment char(20),
+    year char(5))
+
+4. 
+select dept_name, count(takes.ID) as "TOTAL_ENROLLMENT"
+from takes join course
+on course.course_id = takes.course_id
+where takes.year = 2009 
+group by dept_name 
+order by TOTAL_ENROLLMENT desc;
+
+5.
+insert into yearly_total_enrollment values ('Statistics', 40, 2009);
+
+6.
+select instructor.id, instructor.name
+from instructor
+MINUS 
+select T.id, T.name
+from (select * from
+instructor natural join teaches) T inner join takes
+on T.sec_id = takes.sec_id
+where takes.grade = 'A';
+
+7.
+with min_enrollment as
+(select course_id, sec_id, year, semester, count(id) as enroll
+from takes
+group by course_id, sec_id, year, semester)
+select course_id, sec_id, year, semester, enroll
+from min_enrollment
+where enroll = (select min(enroll) from min_enrollment);

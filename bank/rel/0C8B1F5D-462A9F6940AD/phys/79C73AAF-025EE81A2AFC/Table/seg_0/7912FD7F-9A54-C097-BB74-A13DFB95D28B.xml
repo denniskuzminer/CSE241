@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="BRANCH" directorySegmentName="seg_0" id="7912FD7F-9A54-C097-BB74-A13DFB95D28B">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:25 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<schemaObject>C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>964EC33C-A6EF-D0B9-C85F-EC72459150B3</segment>
+<tableSpace>F12AC4DD-737E-FE8E-3586-2FD220BF7C32</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="TELLER_TYPE" id="6E688F8C-8C3A-D912-7873-3F9E5644C7F3">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ADDRESS" id="7AD96045-0129-86AA-280D-21D38F3CEA28">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BRANCH_ID" id="CC554B17-6DD3-D61B-4E6E-91E48AC4BD38">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="BRANCH_PK" id="83AF0A2B-FBC5-047D-D78E-1E864EF9E639">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:27 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<schemaObject>C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D</schemaObject>
+<segment>68175B9D-3E0B-663A-6D7E-FB016FD4A09E</segment>
+<tableSpace>F12AC4DD-737E-FE8E-3586-2FD220BF7C32</tableSpace>
+<indexSegment>68175B9D-3E0B-663A-6D7E-FB016FD4A09E</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

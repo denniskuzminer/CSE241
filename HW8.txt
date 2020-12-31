@@ -1,0 +1,63 @@
+1. We need to satisfy all three conditions to determine whether a decomposition
+is lossy
+- R1 ∪ R2 = R
+(A, B, C) ∪ (C, D, E, G) = (A, B, C, D, E, G)
+- R1 ∩ R2 ≠ ∅
+(A, B, C) ∩ (C, D, E, G) = (C)
+- R1 ∩ R2 = Super key of R1 or R2 
+Does C determine ABC or CDEG?
+No because {C}+ = {C}
+Therefore, because the tables can be joined on C but C does not
+determine any attribute besides itself, this decomposition is lossy.
+
+2. 
+a. Using the the axiom of argumentation, we can determine that N is an extraneous attribute in the first FD.
+b. 
+i. MNQL
+- Start from the last FD
+PQ->K so include PQ in cadidate key -> {PQ}+ = {PQK}
+MN->P so remove P and replace with MN in candidate key {MNQ}+ = {KMNPQ}
+Because L is not present, adding an L to {MNQ}+ -> {MNQL}+ = {KMNPQL}
+This is a minimum candidate key because it uses the smallest number of attributes
+to represent R. 
+ii. KLNQ
+- Start from the first FD
+KL->M so include KL in cadidate key -> {KL}+ = {KLM}
+MN->P so we can add N to the candidate key to add NP to the closure {KLN}+ = {KLMNP}
+Because Q is not present, adding an Q to {KLN}+ -> {KLNQ}+ = {KLMNPQ}
+This is a minimum candidate key because it uses the smallest number of attributes
+to represent R. 
+c. 
+KL->M -> {KL}+ = {KLM}
+MN->N -> This is redundant
+MN->P -> {MN}+ = {MNP}
+PQ->K -> {PQ}+ = {PQK}
+Therefore Fc = {KL->M, MN->P, PQ->K}
+d. 
+R0(K, L, M)  having FD: KL → M
+R1(K, P, Q)  having FD: PQ → K
+R2(L, N, P, Q)
+R3(M, N, P) having FDs: MN → N, MN → P
+R4(K, L, N, Q) 
+R5(L, M, N, Q) having FD: MN → N
+This is dependency preserving because all FDs in F remain part of the decomposition
+e. 
+Step 1: Find canonical cover
+Fc = {KL->M, MN->P, PQ->K}
+Step 2: Make one relation with each functional dependency making the LHS the key
+R1 = ( K, L, M ) with Key: ( K, L )
+R2 = ( M, N , P ) with Key: ( M, N )
+R3 = ( P, Q, K ) with Key: ( P, Q )
+Check for any missing attributes
+No missing attributes
+Step 3: 
+Find missing keys of original relation
+Because none of the new relations form a superkey, we need to add another relation whose schema is a key for R
+R4 = ( K, L, N, Q ) is a candidate key
+
+So finally, 
+R1 = ( K, L, M ) where KL->M
+R2 = ( M, N , P ) where MN->P
+R3 = ( P, Q, K ) where PQ->K
+R4 = ( K, L, N, Q ) 
+ 

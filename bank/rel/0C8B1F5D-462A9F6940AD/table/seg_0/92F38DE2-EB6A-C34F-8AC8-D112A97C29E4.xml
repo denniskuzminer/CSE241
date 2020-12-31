@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="92F38DE2-EB6A-C34F-8AC8-D112A97C29E4" schemaObject="C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D" name="LOAN">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEK223</sourceObjSchema>
+<sourceObjName>LOAN</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="LOAN_ID" id="5C2F7EA0-1F00-82B4-9D0A-8163FD07B77A">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>LOAN</sourceObjSchema>
+<sourceObjName>LOAN_ID</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<ownDataTypeParameters>5 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACC_ID" id="224AB1A7-52D6-26B0-85D1-F0FCDF4BC453">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>LOAN</sourceObjSchema>
+<sourceObjName>ACC_ID</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<ownDataTypeParameters>5 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="12A21DFD-7357-71E3-3F8E-1AAF825B9137" referredColumn="205692C6-4339-8A5B-3888-B662C69377C2"/>
+</associations>
+</Column>
+<Column name="AMOUNT" id="7B097228-A789-A4B1-A58F-09E39A9B57BC">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>LOAN</sourceObjSchema>
+<sourceObjName>AMOUNT</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TYPE" id="7B0AAB79-F98E-7377-3440-A706AB8D9122">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>LOAN</sourceObjSchema>
+<sourceObjName>TYPE</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<constraintName>SYS_C00171886</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;Mortgage&apos;" description=""/>
+<valueDef value="&apos;Unsecured&apos;" description=""/>
+</listOfValues>
+<ownDataTypeParameters>9 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MONTHLY_PAYMENT" id="A65EF0C4-9340-8D32-A498-20A386DEC2A5">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>LOAN</sourceObjSchema>
+<sourceObjName>MONTHLY_PAYMENT</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RATE" id="9A4E4940-4C9C-8044-A280-BB37B3178F8A">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>LOAN</sourceObjSchema>
+<sourceObjName>RATE</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,5,3</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3524B320-946D-548C-FDBD-BC8AC5C121CD" schemaObject="C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D" name="LOAN_PK">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEK223</sourceObjSchema>
+<sourceObjName>SYS_C00171887</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5C2F7EA0-1F00-82B4-9D0A-8163FD07B77A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1D6F0BC1-1115-4AAA-5DA6-2EECDF365147" name="SYS_C00171888">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:29 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="224AB1A7-52D6-26B0-85D1-F0FCDF4BC453"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

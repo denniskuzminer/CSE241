@@ -1,0 +1,107 @@
+Bank Data
+
+
+Branch 
+Address					Teller-Type
+'951 Kings Highway, Brooklyn, NY, 11223', 'Both'
+'407 Manhattan Avenue, Brooklyn, NY 11222', 'ATM'
+
+Account 
+acc_id 	min_balance	type 	rate 	balance 		penalty_fee
+10001	0		Checking		2000		0
+10002	2000		Savings 
+10003	0		Checking		100		0
+10004	0		Checking		200		0
+10005	1000		Savings
+10006	900		Savings
+10007	1500		Savings
+10008	0		Checking		300		0
+10009	0		Checking		1400		0
+10010	700		Savings
+
+Loan
+loan_id	 amount	type		monthly_payment	rate 
+'20001', 500000, 'Mortgage', 1100, ?			
+'20005', 20000, 'Unsecured', 700, ?
+'20007', 15000, 'Unsecured', 1500, ?
+'20006', 200000, 'Mortgage', 700, ?
+'20009', 1000000, 'Mortgage', 2000, ? 
+
+
+
+Credit Card
+card_number		acc_id	expiration_date	rate	limit	running_balance	balance_due
+7783518622113019	10002	9/23			10000
+7324967385718963	10005	8/23			15000
+7870866056111851	10006	11/23			20000
+7293052337143927	10007	2/24			13000	
+7090336151672751	10010	11/22			17500
+
+
+Debit Card
+card_number		acc_id	expiration_date
+'7751654471668022', '10001', '10/21'
+'7404457929934362', '10003', '3/23'
+'7595269365885058', '10004', '12/20'
+'7631283434174052', '10008', '6/24'
+'7772728260951309', '10009', '7/21'
+
+
+
+Customer
+cust_id, name, address, phone
+'10001', 'John Smith', '7889 East Virginia Court, Brooklyn, NY 11220', '347-893-2276'
+'10002', 'John Smith Jr.', '9364 Greenrose Lane, Brooklyn, NY 11233', '718-230-5840'
+'10003', 'Sam Cooke', '48 La Sierra Lane, Brooklyn, NY 11220', '917-971-5073'
+'10004', 'Al Green', '256 Shirley Drive, Brooklyn, NY 11212', '929-293-2458'
+'10005', 'Ray Charles', '9918 NE. Second Rd., Brooklyn, NY 11216', '917-990-6307'
+'10006', 'Luther Vandross', '335 South Paris Hill St., Brooklyn, NY 11238', '718-922-7277'
+'10007', 'Otis Redding', '8919 Birch Hill St., Brooklyn, NY 11220', '212-909-9199'
+'10008', 'Sharon Jones', '5 Pheasant Ave., Brooklyn, NY 11210', '212-787-5902'
+'10009', 'Durand Jones', '668 Vale Ave., Brooklyn, NY 11221', '347-875-8089'
+'10010', 'Eli Reed', '34 Sussex St., Brooklyn, NY 11201', '646-763-3509'
+
+
+Transaction
+
+
+Borrow
+cust_id	loan_id 
+'10001', '20001'		
+'10005', '20005'
+'10007', '20007'
+'10006', '20006'
+'10009', '20009'
+
+
+Customer_acc 
+-- Note: John Smith has a joint account with Sharon Jones 
+-- Note: John Smith has 2 accounts: 10001 and 10002 
+-- Note: John Smith Jr. is a customr but does not have an account
+cust_id	acc_id 
+'10001', '10001'
+'10001', '10002'
+'10003', '10003'
+'10004', '10004'
+'10005', '10005'
+'10006', '10006'
+'10007', '10007'
+'10008', '10001'
+'10009', '10009'
+'10010', '10010'
+
+Account_loan 
+acc_id	loan_id
+'10001', '20001'		
+'10005', '20005'
+'10007', '20007'
+'10006', '20006'
+'10009', '20009'
+
+Account_branch
+?
+
+
+Loan_branch
+Wait why is there a loan branch table why is loan connected to branch
+Shouldn't every thing just come off of account?

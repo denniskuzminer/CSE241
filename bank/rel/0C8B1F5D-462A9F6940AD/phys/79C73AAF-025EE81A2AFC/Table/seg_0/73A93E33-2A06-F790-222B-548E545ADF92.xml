@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="CUSTOMER" directorySegmentName="seg_0" id="73A93E33-2A06-F790-222B-548E545ADF92">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:25 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<schemaObject>C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>964EC33C-A6EF-D0B9-C85F-EC72459150B3</segment>
+<tableSpace>F12AC4DD-737E-FE8E-3586-2FD220BF7C32</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="PHONE" id="19B186A2-F333-CCF5-CDFC-8804A4BAD2AD">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="395E2B06-AF3D-8BB9-74D7-ED6EA178659B">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CUST_ID" id="828CCB48-47A6-892E-8F05-8B4DEC2F787C">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ADDRESS" id="BD4277BA-57AA-F4A4-1242-3709CE4DB817">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CUSTOMER_PK" id="55B416A1-C7A8-1B2E-D28C-92ED9D6B7027">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:28 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<schemaObject>C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D</schemaObject>
+<segment>68175B9D-3E0B-663A-6D7E-FB016FD4A09E</segment>
+<tableSpace>F12AC4DD-737E-FE8E-3586-2FD220BF7C32</tableSpace>
+<indexSegment>68175B9D-3E0B-663A-6D7E-FB016FD4A09E</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="200D5F2F-A7F7-464D-9B8B-82BA70E4C969" schemaObject="C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D" name="CUSTOMER_ACCOUNT">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEK223</sourceObjSchema>
+<sourceObjName>CUSTOMER_ACCOUNT</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:25 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CUST_ID" id="C8DA41C3-B829-490A-2FAE-CBA4C09D08EF">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>CUSTOMER_ACCOUNT</sourceObjSchema>
+<sourceObjName>CUST_ID</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<ownDataTypeParameters>5 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A7959E89-16BC-C8E7-B93C-DCE67797FC9C" referredColumn="828CCB48-47A6-892E-8F05-8B4DEC2F787C"/>
+</associations>
+</Column>
+<Column name="ACC_ID" id="3D5D832E-6261-007E-E123-84AE1DC63F99">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>CUSTOMER_ACCOUNT</sourceObjSchema>
+<sourceObjName>ACC_ID</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<ownDataTypeParameters>5 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ACBFD90C-DD4C-D7F4-DBB3-A7DFBD180F8D" referredColumn="205692C6-4339-8A5B-3888-B662C69377C2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A9788AB1-F7AD-271B-EC54-DA6641DCE3DE" schemaObject="C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D" name="CUSTOMER_ACCOUNT_PK">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEK223</sourceObjSchema>
+<sourceObjName>SYS_C00154754</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C8DA41C3-B829-490A-2FAE-CBA4C09D08EF"/>
+<colUsage columnID="3D5D832E-6261-007E-E123-84AE1DC63F99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3B41D98A-7E53-BE57-7B4E-D462A8C5A86F" name="SYS_C00154755">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:29 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C8DA41C3-B829-490A-2FAE-CBA4C09D08EF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BB42CCFB-8DD9-9B9D-6387-564CC511E809" name="SYS_C00154756">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:29 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3D5D832E-6261-007E-E123-84AE1DC63F99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

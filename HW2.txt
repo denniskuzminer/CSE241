@@ -1,0 +1,77 @@
+1. select distinct building from (  
+select building, room_number, course_id, count(*) as counter
+from section  
+group by building, room_number, course_id) 
+where counter >=3;
+
+2. Gap: select avg(salary) - (sum(salary)/count(*)) from instructor;
+Missing value: select * from instructor
+where salary is null;
+
+The reason why the gap exists is because of a tuple having a null value for the salary.
+This tuple is included in the count(*) statement but excluded in avg(salary).
+
+3. select course.course_id, title from course left outer join prereq
+on course.course_id = prereq.prereq_id
+where prereq.course_id is null
+and dept_name = 'Math';
+
+4. select course_id, title from (select course.course_id, title, count(prereq_id) from course left outer join prereq
+on course.course_id = prereq.course_id
+group by course.course_id, title
+order by count(prereq_id) desc)
+where ROWNUM <= 1;
+
+5. select course.course_id, course.title 
+from course left outer join prereq
+on course.course_id = prereq.course_id
+where title like '%The %'
+and prereq.prereq_id is null;
+
+6a. create table cssection
+    (course_id varchar(8),
+    sec_id varchar(8),
+    semester varchar(6) check (semester in
+    ('Fall', 'Winter', 'Spring', 'Summer')),
+    year numeric(4,0) check (year > 1701 and year < 2100),
+    building varchar(15),
+    room_number varchar(7),
+    time_slot_id varchar(4));
+    
+create table csstudent
+    (ID varchar (5),
+    name varchar (20) not null,
+    dept_name varchar (20),
+    tot_cred numeric (3,0) check (tot_cred >= 0));
+    
+create table cstakes
+    (ID varchar (5),
+    course_id varchar (8),
+    sec_id varchar (8),
+    semester varchar (6),
+    year numeric (4,0),
+    grade varchar (2));
+    
+    
+    
+6b.INSERT INTO csstudent
+SELECT *
+FROM student
+WHERE dept_name = 'Comp. Sci.';
+
+INSERT INTO cstakes
+select id, course_id, sec_id, semester, year, grade from (
+SELECT takes.*
+FROM takes join student on takes.id = student.id
+WHERE student.dept_name = 'Comp. Sci.') natural join course
+where course.dept_name = 'Comp. Sci.';
+
+INSERT INTO cssection
+
+SELECT course_id, sec_id, semester, year, building, room_number, time_slot_id
+FROM section natural join course 
+where dept_name = 'Comp. Sci.'
+
+6c. insert into csstudent values(2, 'Duo', 'Comp. Sci.', 50);
+
+6d.insert into cstakes select 2, course_id, sec_id, semester, year, null from cssection where semester = 'Fall'  and year = 2006 and sec_id = 1 and course_id between 200 and 399; 

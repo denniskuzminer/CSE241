@@ -1,0 +1,155 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1026B190-6155-12C7-339A-FAD3520AAACC" schemaObject="C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D" name="TRANSACTIONACCOUNT">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEK223</sourceObjSchema>
+<sourceObjName>TRANSACTIONACCOUNT</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TRANS_ID" id="28B5A822-A911-5E9C-9DB9-89369805D0CC">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>TRANSACTIONACCOUNT</sourceObjSchema>
+<sourceObjName>TRANS_ID</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>6 BYTE</dataTypeSize>
+<ownDataTypeParameters>6 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACC_ID" id="AE16D758-A40F-31C0-6150-69DEFB9517AC">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>TRANSACTIONACCOUNT</sourceObjSchema>
+<sourceObjName>ACC_ID</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<ownDataTypeParameters>5 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2014996D-F6C6-6B56-2B81-A4371294F2F7" referredColumn="205692C6-4339-8A5B-3888-B662C69377C2"/>
+</associations>
+</Column>
+<Column name="BRANCH_ID" id="5D44FDAC-5911-B13E-CF7F-78E54690DD6C">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>TRANSACTIONACCOUNT</sourceObjSchema>
+<sourceObjName>BRANCH_ID</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<ownDataTypeParameters>5 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B16D8F20-55EB-4BEA-CD47-7E3BD7FF6ADE" referredColumn="CC554B17-6DD3-D61B-4E6E-91E48AC4BD38"/>
+</associations>
+</Column>
+<Column name="TYPE" id="A74FC1FB-48E8-72F4-F0D3-13EB1DBAB799">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>TRANSACTIONACCOUNT</sourceObjSchema>
+<sourceObjName>TYPE</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<constraintName>SYS_C00169193</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;Card Payment&apos;" description=""/>
+<valueDef value="&apos;Deposit&apos;" description=""/>
+<valueDef value="&apos;Fund Transfer&apos;" description=""/>
+<valueDef value="&apos;Loan Payment&apos;" description=""/>
+<valueDef value="&apos;Purchase&apos;" description=""/>
+<valueDef value="&apos;Withdrawal&apos;" description=""/>
+</listOfValues>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIME" id="72FEF161-38D6-18E5-C4B1-8479BBD2EA45">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>TRANSACTIONACCOUNT</sourceObjSchema>
+<sourceObjName>TIME</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AMOUNT" id="610B4577-D7C9-34A3-3046-6E79C95FFA44">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>TRANSACTIONACCOUNT</sourceObjSchema>
+<sourceObjName>AMOUNT</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4960092E-DACE-6181-F226-59CE2F3D4BD2" schemaObject="C8BC4BC5-EB4F-2501-3FFA-6C4FCB39A67D" name="TRANSACTIONACCOUNT_PK">
+<sourceConnName>DBConnection1</sourceConnName>
+<sourceObjSchema>DEK223</sourceObjSchema>
+<sourceObjName>SYS_C00169194</sourceObjName>
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:26 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="28B5A822-A911-5E9C-9DB9-89369805D0CC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DE632FAB-6258-D760-78A9-B80298DA8A73" name="SYS_C00169195">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:29 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE16D758-A40F-31C0-6150-69DEFB9517AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6FE9CAD4-E461-2A29-64B0-B3592351B9BA" name="SYS_C00169196">
+<createdBy>denni</createdBy>
+<createdTime>2020-04-20 12:19:29 UTC</createdTime>
+<ownerDesignName>bank</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5D44FDAC-5911-B13E-CF7F-78E54690DD6C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

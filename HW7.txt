@@ -1,0 +1,33 @@
+1. There are three candidate keys: AC, BC, CD.
+
+2. R1 preserves the initial nature of R; however, in order for the decomposition to be lossless, a connection from R1 to R2 
+must be made. Therefore, because B implies C, a distinct B can identify a value of C, and the two tables can be joined on B
+without losing information.
+
+3. The relation is not BCNF because not all functional dependencies have the RHS as a subset of the LHS or the LHS is not a 
+superkey of the relation. A->B, A->G, B->E, and D->A do not have the RHS ⊆ LHS and A nor B nor D are superkeys. 
+In order for the relation to be in BCNF, add the FD A->C or B->C or D->C because now C is added to the closure of the other FDs. 
+
+
+4. FC = { J -> LK, MNP -> K, KP -> M, L -> JN }
+
+5. 
+Step 1: Find canonical cover
+FC = { J -> LK, MNP -> K, KP -> M, L -> JN }
+Step 2: Make one relation with each functional dependency making the LHS the key
+R1 = ( J, L, K ) with Key: ( J )
+R2 = ( M, N , P, K ) with Key: ( M, N, P )
+R3 = ( L, J, N ) with Key: ( L )
+( K, P, M ) with Key: ( K, P ) could be R4, but it is already contained in R2, so it is redundant
+Check for any missing attributes
+No missing attributes
+Step 3: 
+Find missing keys of original relation
+Because none of the new relations form a superkey, we need to add another relation whose schema is a key for R
+R4 = ( J, P ) is a candidate key
+
+So finally, 
+R1 = ( J, L, K ) where J -> K, J -> L, and L -> J
+R2 = ( M, N , P, K ) where MNP -> K and KP -> M
+R3 = ( L, J, N ) where J -> L, L -> J, L -> N
+R4 = ( J, P ) 
